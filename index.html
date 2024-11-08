@@ -19,21 +19,21 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" type="image/svg+xml" href="/public/thumb.png" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 
 </head>
 
 <body class="overflow-hidden select-none w-full h-screen">
 
     <!-- top nav -->
-    <nav class="fixed w-[100%] z-10 top-0 w-full">
-        <div class="nav-container max-w-[1280px] mx-auto flex items-center justify-between px-[40px]">
-            <a href="#" class="nav-logo ">
-                Sudoku
-            </a>
-            <div class="dark-mode-toggle cursor-pointer" id="dark-mode-toggle">
-                <i class="bx bxs-sun"></i>
-                <i class="bx bxs-moon"></i>
-            </div>
+    <nav class="bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-red-600 dark:text-red-400">Sudoku</a>
+            <button id="darkModeToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+                <i data-lucide="sun" class="hidden dark:block"></i>
+                <i data-lucide="moon" class="block dark:hidden"></i>
+            </button>
         </div>
     </nav>
     <!-- end top nav -->
@@ -53,7 +53,7 @@
             <!-- end start screen -->
 
             <!-- game screen -->
-            <div class="main-game flex xl:w-[65vw] h-[100%] flex-col xl:flex-row justify-center pb-[10px] gap-0 xl:gap-10 xl:items-center xl:justify-between" id="game-screen">
+            <div class="main-game flex xl:w-[65vw] h-[100%] flex-col xl:flex-row justify-center  pb-[10px] gap-0 xl:gap-10 xl:items-center xl:justify-between xl:mt-[30px]" id="game-screen">
                 <div class="main-sudoku-grid font-bold grid pl-[10px] pr-[5px] xl:mb-0 mb-10">
                     <!-- 81 cells -->
                     <div class="main-grid-cell"></div>
