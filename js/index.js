@@ -216,6 +216,10 @@ const checkErr = (value) => {
         addErr(cells[index + step]);
         step += 1;
     }
+    if (isFullGrid(su_answer)) {
+        clearInterval(timer);
+        showResult();
+      }
 }
 
 const removeErr = () => cells.forEach(e => e.classList.remove('err'));
@@ -243,8 +247,9 @@ const isGameWin = () => sudokuCheck(su_answer);
 const showResult = () => {
     clearInterval(timer);
     result_screen.classList.add('active');
-    result_time.innerHTML = showTime(seconds);
-}
+    result_time.innerHTML = `Completion Time: ${showTime(seconds)}`;
+  
+  }
 
 const initNumberInputEvent = () => {
     number_inputs.forEach((e, index) => {
@@ -330,7 +335,7 @@ document.querySelector('#btn-level').addEventListener('click', (e) => {
 });
 
 document.querySelector('#btn-play').addEventListener('click', () => {
-    debugger;
+    
     if (name_input.value.trim().length > 0) {
         initSudoku();
         startGame();
